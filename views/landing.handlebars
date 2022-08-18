@@ -22,6 +22,9 @@
     </form>
   </div>
 
+  <hr>
+  <p>or</p>
+
   {{!-- vertical line needed and or letter in round circle --}}
 
   <div class="col-md-6">
@@ -44,10 +47,37 @@
         <input class="form-input" type="password" id="postcode-signup" />
       </div>
 
+      <div class="slidecontainer">
+        <label for="radius-search">Search Radius</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      </div>
+
+      <label for="drop-down">Fuel Type</label>
+      <select name="drop-down" id="fuel-choice">
+        <option value="one">Regular unleaded petrol (91)</option>
+        <option value="two">E10</option>
+        <option value="three">Premium unleaded petrol (95)</option>
+        <option value="four">Premium unleaded petrol (98)</option>
+        <option value="five">E85</option>
+        <option value="six">Diesel</option>
+        <option value="seven">Liquefied petroleum gas (LPG)</option>
+      </select>
+
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Create Account</button>
       </div>
 
+    </form>
+
+    <form>
+      <div class="form-group">
+      <label for="formGroupExampleInput">Example label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+      </div>
+      <div class="form-group">
+      <label for="formGroupExampleInput2">Another label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+      </div>
     </form>
   </div>
 </div>
