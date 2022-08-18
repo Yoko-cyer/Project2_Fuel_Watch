@@ -7,16 +7,16 @@
 
       <div class="form-group">
         <label for="email-login">Username</label>
-        <input class="form-input" type="text" id="user-login" />
+        <input type="text" class="form-control" id="user-login" placeholder="user name">
       </div>
 
       <div class="form-group">
         <label for="password-login">Password</label>
-        <input class="form-input" type="password" id="password-login" />
+        <input type="text" class="form-control" id="password-login" placeholder="password">
       </div>
 
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <button type="submit" class="btn btn-secondary">Log in</button>
       </div>
 
     </form>
@@ -33,18 +33,18 @@
     <form class="form signup-form">
 
       <div class="form-group">
-        <label for="name-signup">Username</label>
-        <input class="form-input" type="text" id="username-signup" />
+        <label for="email-login">Username</label>
+        <input type="text" class="form-control" id="user-signup" placeholder="user name">
       </div>
 
       <div class="form-group">
-        <label for="email-signup">Password</label>
-        <input class="form-input" type="text" id="password-signup" />
+        <label for="password-login">Password</label>
+        <input type="password" class="form-control" id="password-signup" placeholder="password">
       </div>
 
       <div class="form-group">
-        <label for="password-signup">Postcode</label>
-        <input class="form-input" type="password" id="postcode-signup" />
+        <label for="password-login">Postcode</label>
+        <input type="text" class="form-control" id="postcode-signup" placeholder="postcode">
       </div>
 
       <div class="slidecontainer">
@@ -52,7 +52,25 @@
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
       </div>
 
-      <label for="drop-down">Fuel Type</label>
+      <div class="dropdown open">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Fuel Type
+        </button>
+        <div class="dropdown-menu">
+          <h6 class="dropdown-header">Choose Fuel type</h6>
+          <a class="dropdown-item" href="#!">Regular unleaded petrol (91)</a>
+          <a class="dropdown-item" href="#!">E10</a>
+          <a class="dropdown-item" href="#!">Premium unleaded petrol (95)</a>
+          <a class="dropdown-item" href="#!">Premium unleaded petrol (98)</a>
+          <a class="dropdown-item" href="#!">E85</a>
+          <a class="dropdown-item" href="#!">Diesel</a>
+          <a class="dropdown-item" href="#!">Liquefied petroleum gas (LPG)</a>
+        </div>
+      </div>
+      <br>
+
+
+      {{!-- <label for="drop-down">Fuel Type</label>
       <select name="drop-down" id="fuel-choice">
         <option value="one">Regular unleaded petrol (91)</option>
         <option value="two">E10</option>
@@ -61,24 +79,15 @@
         <option value="five">E85</option>
         <option value="six">Diesel</option>
         <option value="seven">Liquefied petroleum gas (LPG)</option>
-      </select>
+      </select> --}}
 
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Create Account</button>
+        <button class="btn btn-secondary" type="submit">Create Account</button>
       </div>
 
     </form>
 
-    <form>
-      <div class="form-group">
-      <label for="formGroupExampleInput">Example label</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-      </div>
-      <div class="form-group">
-      <label for="formGroupExampleInput2">Another label</label>
-      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-      </div>
-    </form>
+    
   </div>
 </div>
 
