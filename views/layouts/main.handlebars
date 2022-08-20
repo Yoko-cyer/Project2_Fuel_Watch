@@ -5,6 +5,47 @@
   <link rel="stylesheet" href="../../public/css/style.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    #vl{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #or {
+      position: absolute;
+      display: inline-block;
+      font-size: 16px;
+      height: 70px;
+      line-height: 70px;
+    }
+    #or::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 2px;
+      height: 20px;
+      margin: auto;
+      background-color: #000;
+    }
+
+    #or::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 2px;
+      height: 20px;
+      margin: auto;
+      background-color: #000;
+    }
+    
+  </style>
+
 </head>
 
 <body>
@@ -12,21 +53,9 @@
 
   <div class="flex-column justify-space-around">
 
-    {{!-- <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#!">Fuel Watch</a>
-    </nav> --}}
-
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3">Fuel Watch</h1>
-      </div>
-    </div>
-
-    {{!-- <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        Fuel Watch
-      </h1>
-    </header> --}}
+    <nav class="navbar nav justify-content-center bg-dark text-light">
+      <p class="font-weight-bold" style="font-size: 2rem;">🚗🚗Fuel Watch🛵🛵</p>
+    </nav>
 
       <main class="container container-fluid mt-5">
         {{{ body }}}
