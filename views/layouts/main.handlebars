@@ -20,7 +20,7 @@
       height: 70px;
       line-height: 70px;
     }
-    p::before {
+    #or::before {
       content: '';
       position: absolute;
       top: 0;
@@ -32,7 +32,7 @@
       background-color: #000;
     }
 
-    p::after {
+    #or::after {
       content: '';
       position: absolute;
       left: 0;
@@ -43,6 +43,7 @@
       margin: auto;
       background-color: #000;
     }
+    
   </style>
 
 </head>
@@ -52,15 +53,15 @@
 
   <div class="flex-column justify-space-around">
 
-    {{!-- <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#!">Fuel Watch</a>
-    </nav> --}}
+    <nav class="navbar nav justify-content-center bg-dark text-light">
+      <p class="font-weight-bold" style="font-size: 2rem;">🚗🚗Fuel Watch🛵🛵</p>
+    </nav>
 
-    <div class="jumbotron jumbotron-fluid">
+    {{!-- <div class="jumbotron jumbotron-fluid rounded ">
       <div class="container">
-        <h1 class="display-3">Fuel Watch</h1>
+        <h1 class="display-3 text-center">Fuel Watch</h1>
       </div>
-    </div>
+    </div> --}}
 
     {{!-- <header class="display-flex justify-space-between align-center p-2">
       <h1>
