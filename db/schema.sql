@@ -8,7 +8,7 @@ CREATE TABLE `fuel_db`.`user` (
   `username` VARCHAR(255) NOT NULL,
   `post code` INT NOT NULL,
   `search radius` INT NOT NULL,
-  `fuel type` INT NOT NULL,
+  `fuel type` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);
