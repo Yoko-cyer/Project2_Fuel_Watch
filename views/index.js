@@ -1,23 +1,27 @@
-const fuelOne = document.getElementById("#1");
+//const fuelOne = document.getElementById("#1");
+const XMLHttpRequest = require('xhr2');
 
-const getFuelStations = function () {
-    var apiUrl = 'https://www.fuelwatch.wa.gov.au/fuelwatch/fuelWatchRSS?Suburb=' + Karawara;
-    console.log(apiUrl);
+const xhttp = new XMLHttpRequest();
 
-    fetch(apiUrl)
-      .then(function (response) {
-        if (response.ok) {
-          response.json().then(function (data) {
-            displayFuelStations(data);
-          });
-        } else {
-          alert('Error: ' + response.statusText);
-        }
-      })
-      .catch(function (error) {
-        alert('Unable to find fuel stations near this area');
-      });
+function loadXML () {
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const resText = xhttp.responseText;
+      console.log(resText);
+      const prices = resText.responseXML.getElementsByTagName("price")[1];
+      console.log(prices);
+     }
   };
+}
+xhttp.open("GET", "https://www.fuelwatch.wa.gov.au/fuelwatch/fuelWatchRSS?Suburb=Karawara", true);
+xhttp.send();
+
+function getXML(xml) {
+    const xmlDoc = xml.responseXML;
+    const prices = xmlDoc.getElementsByTagName("price")[0];
+    console.log(prices);
+
+}
   
   
 const displayFuelStations = function (data) {
@@ -31,3 +35,4 @@ const displayFuelStations = function (data) {
         fuelOne.textContent = stationName;        
     }
   };
+  loadXML();
