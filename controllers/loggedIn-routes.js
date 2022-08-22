@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const path = require('path');
-const { User } = require('../models');
+const { User } = require('../models/user');
 
 // This is the 'get' route 
 router.get('/', async (req, res) => {
