@@ -20,13 +20,13 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        //password: {
-        //   type: DataTypes.STRING,
-        // allowNull: false,
-        // validate: {
-        //      len: [8],
-        //  },
-        // },
+        password: {
+           type: DataTypes.STRING,
+         allowNull: false,
+         validate: {
+              len: [8],
+          },
+         },
         surroundingSuburbs: {
             type: DataTypes.STRING,
             allowNull: false,
