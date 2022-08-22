@@ -6,4 +6,4 @@ const loggedInRoutes = require('./loggedIn-routes');
 router.use('/', landingRoutes);
 router.use('/loggedIn', loggedInRoutes);
 
-module.export = router;
+module.exports = router;
