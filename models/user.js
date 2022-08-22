@@ -20,24 +20,21 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        password: {
+        //password: {
+        //   type: DataTypes.STRING,
+        // allowNull: false,
+        // validate: {
+        //      len: [8],
+        //  },
+        // },
+        surroundingSuburbs: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8],
-            },
-        },
-        postCode: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        searchRadius: {
-            type: DataTypes.INTEGER,
             allowNull: false,
         },
         fuelType: {
             type: DataTypes.STRING,
             allowNull: false,
+
         },
     },
     {
