@@ -3,7 +3,7 @@ const path = require('path');
 const { User } = require('../models/user');
 
 // This is the 'get' route 
-router.get('/', async (req, res) => {
+router.get('/loggedIn', async (req, res) => {
   // Here, index.html is rendered
   res.render('loggedIn');
 });
