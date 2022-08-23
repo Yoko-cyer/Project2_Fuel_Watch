@@ -4,7 +4,6 @@ const path = require('path');
 const hbs = exphbs.create({});
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.store);
 const axios = require('axios');
 const {XMLParser} = require('fast-xml-parser');
 // Sets up the Express App
@@ -28,14 +27,18 @@ app.get('/api/fuel', (req, res) => {
     .then((response) => {
       const parser = new XMLParser();
       const json = parser.parse(response.data);
-      const price = json.rss.channel.item[0].price;
-      res.json(price);
-      console.log(price);
-      fuelOne.innerHTML = price;
+      const title = [];
+      const address = [];
+      for(let i = 0; i < 5; i++) {
+        title[i] = json.rss.channel.item[i].title;
+        address[i] = json.rss.channel.item[i].address + ' ' + json.rss.channel.item[i].location;
+      }
+      res.json(title[3] + address[3])
+      console.log(title[3]);
+      console.log(address[3]);
+      writeToHTML();
     })
-
 })
-
 
 // Starts the server to begin listening
 app.listen(PORT, () => {
