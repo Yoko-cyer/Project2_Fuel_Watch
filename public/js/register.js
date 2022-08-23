@@ -8,7 +8,7 @@ const signupFormHandler = async (event) => {
     const fuelType = document.querySelector('#fuel-choice').value.trim();
     
     if (username && password && suburb && fuelType) {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/loggedIn-routes/', {
             method: 'POST',
             body: JSON.stringify({ username, password, suburb, surroundingSuburbs, fuelType }),
             headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             alert("Registration Successful!")
             event.preventDefault();
-            const response = await fetch('/api/users/login', {
+            const response = await fetch('/api/loggedIn-routes/', {
                 method: 'POST',
                 body: JSON.stringify({ username, password, suburb, surroundingSuburbs, fuelType }),
                 headers: { 'Content-Type': 'application/json' },
