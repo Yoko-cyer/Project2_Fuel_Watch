@@ -44,6 +44,7 @@ app.get('/api/fuel', (req, res) => {
     })
 })
 
+app.use(routes);
 
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
