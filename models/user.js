@@ -29,7 +29,7 @@ class User extends Model {
            },
           },
          surroundingSuburbs: {
-             type: DataTypes.STRING,
+             type: DataTypes.BOOLEAN,
              allowNull: false,
          },
          fuelType: {
