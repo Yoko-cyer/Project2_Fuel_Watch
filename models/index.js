@@ -1,4 +1,4 @@
 const User = require('./user');
 const Servo = require('./servo');
 
-module.exports = { User };
+module.exports = { User, Servo };

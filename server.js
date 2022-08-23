@@ -15,8 +15,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('./controllers/landing-routes'));
-app.use(require('./controllers/loggedIn-routes'));
+app.use(require('./controllers/api/landing-routes'));
+app.use(require('./controllers/api/loggedIn-routes'));
 
 
 
@@ -40,7 +40,8 @@ app.get('/api/fuel', (req, res) => {
     })
 })
 
+
 // Starts the server to begin listening
-app.listen(PORT, () => {
-  console.log('Server listening on: http://localhost:' + PORT);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Server listening on: http://localhost:' + PORT));
 });
