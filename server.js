@@ -20,6 +20,11 @@ app.use(require('./controllers/api/loggedIn-routes'));
 
 
 
+  //app.get('/loggedIn', (req, res) => {
+    
+  //    res.render('loggedIn', {fuelData: title});
+  //});
+
 app.get('/api/fuel', (req, res) => {
 
 
@@ -33,10 +38,9 @@ app.get('/api/fuel', (req, res) => {
         title[i] = json.rss.channel.item[i].title;
         address[i] = json.rss.channel.item[i].address + ' ' + json.rss.channel.item[i].location;
       }
-      res.json(title[3] + address[3])
-      console.log(title[3]);
-      console.log(address[3]);
-      writeToHTML();
+      res.render(title[0] + address[0])
+      console.log(title);
+      console.log(address);
     })
 })
 
