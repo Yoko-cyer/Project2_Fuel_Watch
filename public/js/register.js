@@ -7,10 +7,10 @@ const signupFormHandler = async (event) => {
     const surroundingSuburbs = document.querySelector('#customCheck1').value.trim();
     const fuelType = document.querySelector('#fuel-choice').value.trim();
 
-    if (username && password) {
+    if (username && password && suburb && fuelType) {
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, password, suburb, surroundingSuburbs, fuelType }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -20,7 +20,7 @@ const signupFormHandler = async (event) => {
             event.preventDefault();
             const response = await fetch('/api/users/login', {
                 method: 'POST',
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ username, password, suburb, surroundingSuburbs, fuelType }),
                 headers: { 'Content-Type': 'application/json' },
             });
             if (response.ok) {
