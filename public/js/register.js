@@ -4,9 +4,9 @@ const signupFormHandler = async (event) => {
     const username = document.querySelector('#user-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const suburb = document.querySelector('#postcode-signup').value.trim();
-    const surroundingSuburbs = document.querySelector('#customCheck1').value.trim();
+    const surroundingSuburbs = document.querySelector('#customCheck1').checked;
     const fuelType = document.querySelector('#fuel-choice').value.trim();
-
+    
     if (username && password && suburb && fuelType) {
         const response = await fetch('/api/users', {
             method: 'POST',
@@ -32,4 +32,4 @@ const signupFormHandler = async (event) => {
     }
 };
 
-document.querySelector('#signup-btn').addEventListener('submit', signupFormHandler);
+document.querySelector('#signup-btn').addEventListener('click', signupFormHandler);
