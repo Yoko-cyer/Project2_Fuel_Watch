@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('./../config/connection');
+const sequelize = require('../config/connection');
 
 class Servo extends Model {}
 
@@ -25,13 +25,13 @@ Servo.init(
       allowNull: false, 
     },
     companyName: {
-        type: DataTypes.STRING,
-        allowNull: false, 
-      },
-      price: {
-        type: DataTypes.DECIMAL,
-        allowNull: false, 
-      },
+      type: DataTypes.STRING,
+      allowNull: false, 
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false, 
+    },
   },
   {
     sequelize,
