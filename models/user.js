@@ -30,11 +30,11 @@ class User extends Model {
           },
          surroundingSuburbs: {
              type: DataTypes.BOOLEAN,
-             allowNull: false,
+             allowNull: true,
          },
          fuelType: {
              type: DataTypes.STRING,
-             allowNull: false,
+             allowNull: true,
 
          },
      },
