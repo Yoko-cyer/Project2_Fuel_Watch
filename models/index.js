@@ -1,4 +1,4 @@
-const User = require('./user');
-const Servo = require('./servo');
+const User = require('./User');
+const Servo = require('./Servo');
 
 module.exports = { User, Servo };
