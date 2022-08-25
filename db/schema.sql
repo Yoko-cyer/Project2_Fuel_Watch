@@ -1,4 +1,0 @@
-DROP DATABASE IF EXISTS fuel_db;
-CREATE DATABASE fuel_db;
-
-USE fuel_db;
