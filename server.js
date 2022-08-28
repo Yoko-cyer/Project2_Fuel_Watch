@@ -7,6 +7,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const axios = require('axios');
 const {XMLParser} = require('fast-xml-parser');
+const db = require("./models");
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -39,26 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/api/user-routes'));
 app.use(require('./controllers/loggedIn-routes'));
-
-
- // app.get('/api/user');
-  app.get('/loggedIn', (req, res) => {
-    axios.get('https://www.fuelwatch.wa.gov.au/fuelwatch/fuelWatchRSS?Suburb=Karawara')
-    .then((response) => {
-      const parser = new XMLParser();
-      const json = parser.parse(response.data);
-      const title = [];
-      const address = [];
-      for(let i = 0; i < 5; i++) {
-        title[i] = json.rss.channel.item[i].title;
-        address[i] = json.rss.channel.item[i].address + ' ' + json.rss.channel.item[i].location;
-      }
-      res.render('loggedIn', {fuelData: title});
-      console.log(title);
-      console.log(address);
-    })
-
-  });
 
 app.use(routes);
 

@@ -23,8 +23,6 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
-
-      res.render('loggedIn');
     });
   } catch (err) {
     console.log(err);
@@ -59,6 +57,9 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.suburb = dbUserData.suburb;
+      req.session.surrounding_suburbs = dbUserData.surrounding_suburbs;
+      req.session.fuel_type = dbUserData.fuel_type;
       console.log(
         '🚀 ~ file: user-routes.js ~ line 59 ~ req.session.save ~ req.session.cookie',
         req.session.cookie
