@@ -5,15 +5,17 @@
 
 </header>
 <section class="container col-md-8">
-  <ul class="list-group" style="font-size: 2vh;">
-    {{#each fuelData as |fuel|}}
-    <li class="list-group-item list-group-item-action list-group-item-dark" id="1">
-      {{fuel}}
-    </li>
+  {{#each fuelData as |fuel|}}
+  <a href="https://www.google.com/maps/place/{{fuel.location}}" target="_blank">
+    <ul class="list-group" style="font-size: 2vh;">
+      <li class="list-group-item list-group-item-action list-group-item-dark" id="1">
+        {{fuel.title}}
+        {{fuel.location}}
+      </li>
 
-    {{/each}}
-    
-  </ul>
+    </ul>
+  </a>
+  {{/each}}
 </section>
 <button class="btn btn-primary justify-content-right align-items-center" type="button" data-toggle="collapse" data-target="#settings" aria-expanded="false" aria-controls="settings">
     <<
@@ -37,13 +39,13 @@
 
       <label for="fuel-change">Fuel Type</label>
         <select name="fuel-type" id="fuel-change">
-          <option value="1">Regular unleaded petrol (91)</option>
-          <option value="2">E10</option>
-          <option value="4">Premium unleaded petrol (95)</option>
-          <option value="5">Premium unleaded petrol (98)</option>
-          <option value="6">E85</option>
-          <option value="10">Diesel</option>
-          <option value="11">Liquefied petroleum gas (LPG)</option>
+          <option value="1">Regular Unleaded Petrol (91)</option>
+          <option value="5">LPG</option>
+          <option value="2">Premium Unleaded Petrol (95)</option>
+          <option value="6">98 RON (98)</option>
+          <option value="10">E85</option>
+          <option value="4">Diesel</option>
+          <option value="11">Brand Diesel</option>
         </select>
 
     <br>
@@ -51,5 +53,8 @@
     <div class="form-group">
       <button class="btn btn-secondary" type="submit">Submit</button>
     </div>
+    <br>
+    <div> !Note changes require user log out to apply!</div>
   </form>
+        <button class="logout btn btn-secondary" type="button">Logout</button>
 </aside>
