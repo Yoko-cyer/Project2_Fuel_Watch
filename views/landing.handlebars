@@ -1,0 +1,96 @@
+
+<div class="container-fluid row justify-content-center" style="margin: 5vh;">
+
+  <section class="col-md-3 bg-dark text-light rounded pt-3 mb-2">
+    <h2>Login</h2>
+
+    <form class="form login-form">
+
+      <div class="form-group">
+        <label for="email-login">Username</label>
+        <input type="text" class="form-control" id="username-login" placeholder="user name">
+      </div>
+
+      <div class="form-group">
+        <label for="password-login">Password</label>
+        <input type="password" class="form-control" id="password-login" placeholder="password">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-secondary" id="login-button">Log in</button>
+      </div>
+
+    </form>
+  </section>
+
+
+  {{!-- vertical line needed and or letter in round circle --}}
+
+  <div id="vl" class="col-md-2 ">
+    <p id="or">or</p>
+
+  </div>
+
+  <section class="col-md-3 bg-dark text-light rounded pt-3 mb-2">
+    <h2>Sign up</h2>
+
+    <form class="form signup-form">
+
+      <div class="form-group">
+        <label for="email-login">Username</label>
+        <input type="text" class="form-control" id="username-signup" placeholder="user name">
+      </div>
+
+      <div class="form-group">
+        <label for="password-login">Password</label>
+        <input type="password" class="form-control" id="password-signup" placeholder="password">
+      </div>
+
+      <div class="form-group">
+        <label for="password-login">Suburb</label>
+        <input type="text" class="form-control" id="suburb-signup" placeholder="Suburb">
+      </div>
+
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="surrounding-signup">
+        <label class="custom-control-label" for="surrounding-signup">Include srounding area</label>
+      </div>
+
+      {{!-- <div class="dropdown open">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Fuel Type
+        </button>
+        <div class="dropdown-menu">
+          <h6 class="dropdown-header">Choose Fuel type</h6>
+          <p id="1" class="dropdown-item">Regular unleaded petrol</p>
+          <p id="2" class="dropdown-item">Premium unleaded petrol</p>
+          <p id="4" class="dropdown-item">Diesel</p>
+          <p id="5" class="dropdown-item">Liquefied petroleum gas (LPG)</p>
+          <p id="6" class="dropdown-item">98 RON</p>
+          <p id="10" class="dropdown-item">E85</p>
+          <p id="11" class="dropdown-item">Brand diesel</p>
+
+        </div>
+      </div> --}}
+      <br>
+
+      <label for="fuel-drop-down">Fuel Type</label>
+              <select name="fuel-type" id="fuel-signup">
+                <option value="1">Regular unleaded petrol (91)</option>
+                <option value="5">LPG</option>
+                <option value="2">Premium unleaded petrol (95)</option>
+                <option value="6">98 RON (98)</option>
+                <option value="10">E85</option>
+                <option value="4">Diesel</option>
+                <option value="11">Brand Diesel</option>
+              </select>
+
+      <div class="form-group">
+        <button id="signup-btn" class="btn btn-secondary" type="submit">Create Account</button>
+      </div>
+
+    </form>
+    
+  </section>
+</div>
+
