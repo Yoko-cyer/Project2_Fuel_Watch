@@ -22,12 +22,14 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.logged_in = true;
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+  res.send
 });
 
 // Login
@@ -60,6 +62,7 @@ router.post('/login', async (req, res) => {
       req.session.suburb = dbUserData.suburb;
       req.session.surrounding_suburbs = dbUserData.surrounding_suburbs;
       req.session.fuel_type = dbUserData.fuel_type;
+      req.session.username = dbUserData.username;
       console.log(
         '🚀 ~ file: user-routes.js ~ line 59 ~ req.session.save ~ req.session.cookie',
         req.session.cookie
@@ -71,6 +74,45 @@ router.post('/login', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+router.post('/edit', async (req, res) => {
+  try {
+    const dbUserData = await User.update(
+      { suburb: req.body.suburb, 
+        surrounding_suburbs: req.body.surrounding,
+        fuel_type: req.body.fuel, 
+      },
+      {
+        where: {
+          username: req.session.username 
+        },
+    });
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.suburb = dbUserData.suburb;
+      req.session.surrounding_suburbs = dbUserData.surrounding_suburbs;
+      req.session.fuel_type = dbUserData.fuel_type;
+      console.log(
+        '🚀 ~ file: user-routes.js ~ line 89 ~ req.session.save ~ req.session.cookie',
+        req.session.cookie
+      );
+      
+      res.redirect('/loggedIn');
+
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get('/logout', function (req, res, next) {
+  if (req.session.loggedin) {
+    req.session.loggedin = false;
+    res.redirect('/');
+  }else{
+  // Not logged in
+  res.redirect('/');
+}
 });
 
 module.exports = router;
