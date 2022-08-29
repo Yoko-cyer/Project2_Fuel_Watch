@@ -6,23 +6,14 @@
 </header>
 <section class="container col-md-8">
   <ul class="list-group" style="font-size: 2vh;">
+    {{#each fuelData as |fuel|}}
     <li class="list-group-item list-group-item-action list-group-item-dark" id="1">
-      BP
+      {{fuel}}
     </li>
-    <li class="list-group-item list-group-item-action list-group-item-dark" id="2">
-      Ampol
-    </li>
-    <li class="list-group-item list-group-item-action list-group-item-dark " id="3">
-      Shell
-    </li>
-    <li class="list-group-item list-group-item-action list-group-item-dark" id="4">
-      Caltex
-    </li>
-    <li class="list-group-item list-group-item-action list-group-item-dark" id="5">
-      Puma
-    </li>
+
+    {{/each}}
+    
   </ul>
-  
 </section>
 <button class="btn btn-primary justify-content-right align-items-center" type="button" data-toggle="collapse" data-target="#settings" aria-expanded="false" aria-controls="settings">
     <<
@@ -69,6 +60,7 @@
     </div>
   </form>
 </aside>
+
 
 <script>
   let slider = document.getElementById("myRange");
