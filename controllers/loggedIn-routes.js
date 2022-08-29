@@ -7,7 +7,7 @@ const {XMLParser} = require('fast-xml-parser');
 const { User } = require('../models');
 
 router.get('/loggedIn', async(req, res) => {
-
+// generating request api using a GET request
     const sbrb = req.session.suburb;
     let sndsbrb = req.session.surrounding_suburbs;
     const product = req.session.fuel_type
@@ -18,7 +18,7 @@ router.get('/loggedIn', async(req, res) => {
       const parser = new XMLParser();
       const json = parser.parse(response.data);
       const station = [];
-
+      // if json item is undefined, return the following responses
       if(json.rss.channel.item == undefined) {
         station[0] = "No fuel stations in this area";
         res.render('loggedIn', {fuelData: station});

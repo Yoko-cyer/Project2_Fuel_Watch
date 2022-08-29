@@ -1,3 +1,4 @@
+// function to log in user
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -19,6 +20,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// function to sign up user 
 const signupFormHandler = async (event) => {
   event.preventDefault();
 

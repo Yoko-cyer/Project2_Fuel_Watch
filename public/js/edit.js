@@ -1,3 +1,4 @@
+// function to update user info using POST request to the database
 const changeFormHandler = async (event) => {
     event.preventDefault();
   
